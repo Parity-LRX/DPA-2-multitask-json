@@ -1,4 +1,4 @@
-# DPA-2 预训练模型使用指南
+# DPA-2 预训练模型 Multitask JSON文件使用指南
 
 预训练模型的具体使用方法及训练数据，可以在 DPA-2 预训练模型官网找到：
 [访问 DPA-2 预训练模型官网](https://aissquare.com/models/detail?pageType=models&name=DPA-2.2.0-v3.0.0b3&id=272)
