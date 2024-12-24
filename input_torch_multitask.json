@@ -1,0 +1,364 @@
+{
+  "_comment": "that's all",
+  "model": {
+    "shared_dict": {
+      "type_map_all": [
+        "H",
+            "He",
+            "Li",
+            "Be",
+            "B",
+            "C",
+            "N",
+            "O",
+            "F",
+            "Ne",
+            "Na",
+            "Mg",
+            "Al",
+            "Si",
+            "P",
+            "S",
+            "Cl",
+            "Ar",
+            "K",
+            "Ca",
+            "Sc",
+            "Ti",
+            "V",
+            "Cr",
+            "Mn",
+            "Fe",
+            "Co",
+            "Ni",
+            "Cu",
+            "Zn",
+            "Ga",
+            "Ge",
+            "As",
+            "Se",
+            "Br",
+            "Kr",
+            "Rb",
+            "Sr",
+            "Y",
+            "Zr",
+            "Nb",
+            "Mo",
+            "Tc",
+            "Ru",
+            "Rh",
+            "Pd",
+            "Ag",
+            "Cd",
+            "In",
+            "Sn",
+            "Sb",
+            "Te",
+            "I",
+            "Xe",
+            "Cs",
+            "Ba",
+            "La",
+            "Ce",
+            "Pr",
+            "Nd",
+            "Pm",
+            "Sm",
+            "Eu",
+            "Gd",
+            "Tb",
+            "Dy",
+            "Ho",
+            "Er",
+            "Tm",
+            "Yb",
+            "Lu",
+            "Hf",
+            "Ta",
+            "W",
+            "Re",
+            "Os",
+            "Ir",
+            "Pt",
+            "Au",
+            "Hg",
+            "Tl",
+            "Pb",
+            "Bi",
+            "Po",
+            "At",
+            "Rn",
+            "Fr",
+            "Ra",
+            "Ac",
+            "Th",
+            "Pa",
+            "U",
+            "Np",
+            "Pu",
+            "Am",
+            "Cm",
+            "Bk",
+            "Cf",
+            "Es",
+            "Fm",
+            "Md",
+            "No",
+            "Lr",
+            "Rf",
+            "Db",
+            "Sg",
+            "Bh",
+            "Hs",
+            "Mt",
+            "Ds",
+            "Rg",
+            "Cn",
+            "Nh",
+            "Fl",
+            "Mc",
+            "Lv",
+            "Ts",
+            "Og"
+      ],
+      "sea_descriptor_1": {
+      "type": "dpa2",
+      "repinit": {
+        "tebd_dim": 8,
+        "rcut": 9.0,
+        "rcut_smth": 8.0,
+        "nsel": 120,
+        "neuron": [
+          25,
+          50,
+          100
+        ],
+        "axis_neuron": 12,
+        "activation_function": "tanh"
+      },
+      "repformer": {
+        "rcut": 4.0,
+        "rcut_smth": 3.5,
+        "nsel": 40,
+        "nlayers": 12,
+        "g1_dim": 128,
+        "g2_dim": 32,
+        "attn2_hidden": 32,
+        "attn2_nhead": 4,
+        "attn1_hidden": 128,
+        "attn1_nhead": 4,
+        "axis_neuron": 4,
+        "update_h2": false,
+        "update_g1_has_conv": true,
+        "update_g1_has_grrg": true,
+        "update_g1_has_drrd": true,
+        "update_g1_has_attn": true,
+        "update_g2_has_g1g1": true,
+        "update_g2_has_attn": true,
+        "attn2_has_gate": true
+      },
+      "use_tebd_bias": false, 
+      "add_tebd_to_repinit_out": false,
+      "seed": 1,
+      "_comment": " that's all"
+     },
+    "_comment": " that's all"
+},
+  "model_dict": {
+    "pureknachar": {
+      "type_map": "type_map_all",
+      "descriptor": "sea_descriptor_1",
+      "fitting_net": {
+        "neuron": [
+         100,
+         100,
+         100
+        ],
+        "activation_function": "tanh",
+        "resnet_dt": true,
+        "seed": 1,
+        "_comment": " that's all"
+      }
+    },
+    "Domains_ANI": {
+      "type_map": "type_map_all",
+      "descriptor": "sea_descriptor_1",
+      "fitting_net": {
+        "neuron": [
+          240,
+          240,
+          240
+        ],
+        "activation_function": "tanh",
+        "resnet_dt": true,
+        "seed": 1,
+        "_comment": " that's all"
+      }
+    },
+    "Domains_OC2M": {
+      "type_map": "type_map_all",
+      "descriptor": "sea_descriptor_1",
+      "fitting_net": {
+        "neuron": [
+          240,
+          240,
+          240
+        ],
+        "activation_function": "tanh",
+        "resnet_dt": true,
+        "seed": 1,
+        "_comment": " that's all"
+      }
+    },
+    "Domains_Transition1x": {
+      "type_map": "type_map_all",
+      "descriptor": "sea_descriptor_1",
+      "fitting_net": {
+        "neuron": [
+          240,
+          240,
+          240
+        ],
+        "activation_function": "tanh",
+        "resnet_dt": true,
+        "seed": 1,
+        "_comment": " that's all"
+      }
+    }
+  }
+},
+  "learning_rate": {
+    "type": "exp",
+    "decay_steps": 5000,
+    "start_lr": 0.0002,
+    "stop_lr": 3.51e-08,
+    "_comment": "that's all"
+  },
+  "loss_dict": {
+    "pureknachar": {
+      "type": "ener",
+      "start_pref_e": 0.02,
+      "limit_pref_e": 1,
+      "start_pref_f": 1000,
+      "limit_pref_f": 1,
+      "start_pref_v": 0,
+      "limit_pref_v": 0
+    },
+    "Domains_ANI": {
+      "type": "ener",
+      "start_pref_e": 0.02,
+      "limit_pref_e": 1,
+      "start_pref_f": 1000,
+      "limit_pref_f": 1,
+      "start_pref_v": 0,
+      "limit_pref_v": 0
+    },
+        "Domains_OC2M": {
+      "type": "ener",
+      "start_pref_e": 0.02,
+      "limit_pref_e": 1,
+      "start_pref_f": 1000,
+      "limit_pref_f": 1,
+      "start_pref_v": 0,
+      "limit_pref_v": 0
+    },
+        "Domains_Transition1x": {
+      "type": "ener",
+      "start_pref_e": 0.02,
+      "limit_pref_e": 1,
+      "start_pref_f": 1000,
+      "limit_pref_f": 1,
+      "start_pref_v": 0,
+      "limit_pref_v": 0
+    }
+  },
+  "training": {
+    "model_prob": {
+      "pureknachar": 0.5,
+      "Domains_ANI": 0.2,
+      "Domains_OC2M": 0.2,
+      "Domains_Transition1x": 0.1
+    },
+    "data_dict": {
+      "pureknachar": {
+        "training_data": {
+          "systems": [
+                "./300"
+          ],
+          "batch_size": 1,
+          "_comment": "that's all"
+        },
+        "validation_data": {
+          "systems": [
+            "../00.data/C25H11K0N0O0Na1"
+          ],
+          "batch_size": 1,
+          "_comment": "that's all"
+        }
+      },
+      "Domains_ANI": {
+        "training_data": {
+          "systems": [
+"./ANI/downstream/C2H9N3O2/train",
+"./ANI/downstream/C5H9N1O3/train",
+"./ANI/downstream/C5H10N6O2/train",
+"./ANI/downstream/C1H1N5O2/train",
+"./ANI/downstream/C10H25N3O1/train",
+"./ANI/downstream/C5H9N5O4/train",
+"./ANI/downstream/C4H2N0O5/train",
+"./ANI/downstream/C8H7N1O2/train",
+"./ANI/downstream/C3H9N3O2/train"
+          ],
+          "batch_size": 1,
+          "_comment": "that's all"
+        },
+        "validation_data": {
+          "systems": [
+            "../00.data/C25H11K0N0O0Na1"
+          ],
+          "batch_size": 1,
+          "_comment": "that's all"
+        }
+      },
+            "Domains_OC2M": {
+        "training_data": {
+          "systems": [
+            "/mnt/d/dpa2/ft/OC2M/train/0/68/sys.000230",
+            "/mnt/d/dpa2/ft/OC2M/train/0/51/sys.000122",
+            "/mnt/d/dpa2/ft/OC2M/train/0/70/sys.000002"
+          ],
+          "batch_size": 1,
+          "_comment": "that's all"
+        },
+        "validation_data": {
+          "systems": [
+            "/mnt/d/dpa2/ft/OC2M/train/0/100/sys.000047",
+            "/mnt/d/dpa2/ft/OC2M/train/0/44/sys.000035"
+          ],
+          "batch_size": 1,
+          "_comment": "that's all"
+        }
+    },
+    "Domains_Transition1x": {
+        "training_data": {
+          "systems": [
+"./Transition1x/downstream/data/mixdata_train/14",
+"./Transition1x/downstream/data/mixdata_train/8",
+"./Transition1x/downstream/data/mixdata_train/17",
+"./Transition1x/downstream/data/mixdata_train/18"
+          ],
+          "batch_size": 1,
+          "_comment": "that's all"
+        }
+      }
+  },
+    "numb_steps": 100000,
+    "seed": 10,
+    "disp_file": "lcurve.out",
+    "disp_freq": 100,
+    "save_freq": 100,
+    "_comment": "that's all"
+  }
+}
+  
